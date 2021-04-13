@@ -3,8 +3,11 @@ kind: Deployment
 metadata:
   name: akkar
   labels:
-    app: web
+    app: akkar
 spec:
+  selector:
+    matchLabels:
+      app: akkar
   replicas: 1
   strategy:
     type: RollingUpdate
