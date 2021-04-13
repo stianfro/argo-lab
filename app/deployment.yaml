@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       labels:
-        app: web
+        app: akkar
     spec:
       containers:
         - name: nginx
