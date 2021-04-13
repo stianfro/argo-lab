@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
 - argocd-server-ingress.yaml
 - argocd-rbac-cm.yaml
-- argocd-cm.yaml
