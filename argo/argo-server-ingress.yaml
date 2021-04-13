@@ -21,4 +21,4 @@ spec:
   tls:
   - hosts:
     - argocd.froystein.xyz
-    secretName: argocd-secret # do not change, this is provided by Argo CD
+    secretName: argocd-secret
