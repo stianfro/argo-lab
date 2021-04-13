@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: argocd
+data:
+  admin.enabled: "false"
+  dex.config: |
+    connectors:
+      - type: github
+        id: github
+        name: GitHub
+        config:
+          clientID: 5b35b4db8cac8aa46151
+          clientSecret: $dex.github.clientSecret
+          orgs:
+          - name: froystein
+  statusbadge.enabled: "true"
+  url: https://argocd.froystein.xyz
+  users.anonymous.enabled: "false"
