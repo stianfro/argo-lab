@@ -14,10 +14,10 @@ spec:
         path: "/"
         backend:
           service:
-            name: argocd-server
+            name: akkar-service
             port:
               number: 80
   tls:
   - hosts:
     - akkar.froystein.xyz
-    secretName: argocd-secret
+    secretName: akkar-secret
