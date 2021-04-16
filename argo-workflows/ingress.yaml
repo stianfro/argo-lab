@@ -1,24 +1,14 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: argo-server
   annotations:
-    kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt-prod
     ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
-  - host: workflows.froystein.xyz
-    http:
-      paths:
-      - pathType: Prefix
-        path: /argo(/|$)(.*)
-        backend:
-          service:
-            name: argo-server
-            port:
-              number: 2746
-  tls:
-  - hosts:
-    - workflows.froystein.xyz
-    secretName: workflows-tls-secret
+    - http:
+        paths:
+          - backend:
+              serviceName: argo-server
+              servicePort: 2746
+            path: /argo(/|$)(.*)
